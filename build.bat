@@ -18,16 +18,13 @@ set OutputVpk=%ReleaseRoot%\%ProjectName%.vpk
 
 echo Cleaning old build...
 
-REM kill anything that might still be holding files (important)
 taskkill /f /im love-12.exe >nul 2>&1
 
-REM force delete with retry (Windows can be stubborn)
 if exist "%TempDir%" (
     rmdir /s /q "%TempDir%"
     timeout /t 1 >nul
 )
 
-REM second safety pass (fixes random "file still exists")
 if exist "%TempDir%" (
     rmdir /s /q "%TempDir%"
 )
@@ -49,7 +46,7 @@ mkdir "%TempDir%"
 mkdir "%ReleaseRoot%"
 mkdir "%ReleaseDir%"
 
-echo Creating .love archive...
+echo Creating .love archive
 
 powershell -Command "Get-ChildItem -Exclude 'objects','tools','release','logs','build_temp' | Compress-Archive -DestinationPath '%ZipFile%' -Force"
 
@@ -60,22 +57,22 @@ if not exist "%ZipFile%" (
 
 move /y "%ZipFile%" "%LoveFile%" >nul
 
-echo Building Windows executable...
+echo Building Windows executable
 
 copy /b "%LoveExe%" + "%LoveFile%" "%ReleaseDir%\temp.exe" >nul
 rename "%ReleaseDir%\temp.exe" "%ProjectName%.exe"
 
-echo Copying LOVE DLLs...
+echo Copying LOVE DLLs
 
 copy "%LovePath%\*.dll" "%ReleaseDir%" >nul
 
-echo Copying license...
+echo Copying license
 
 copy "%LovePath%\license.txt" "%ReleaseDir%\license.txt" >nul
 
 mkdir "%ReleaseDir%\mods"
 
-echo Building PS Vita VPK with 7-Zip because PowerShell is a liar...
+echo Building PS Vita VPK
 
 mkdir "%VitaBuildDir%"
 xcopy /E /I /Y /Q "%VitaTemplateDir%\*" "%VitaBuildDir%\" >nul
@@ -87,12 +84,10 @@ if not exist "%VitaBuildDir%\eboot.bin" (
 
 copy /Y "%LoveFile%" "%VitaBuildDir%\game.love" >nul
 
-REM The magic 7-Zip line! 
-REM a = add to archive, -tzip = force standard zip format, -mx=0 = absolute zero compression
 "tools\7za.exe" a -tzip -mx=0 "%OutputVpk%" ".\%VitaBuildDir%\*"
 
 if not exist "%OutputVpk%" (
-    echo Failed to create VPK. Did you put 7za.exe in the tools folder, sister?
+    echo Failed to create VPK.
     exit /b 1
 )
 
