@@ -1,0 +1,1 @@
+[{"position":[1180,0],"cornerRadius":0,"fontSize":14,"textColor":[0,0,0],"textAlpha":1,"textAlignmentX":"center","textAlignmentY":"center","rotation":0,"anchorX":"right","visible":true,"font":"SpaceMono-Regular","anchorY":"top","size":[100,40],"children":[],"text":"load","alpha":1,"zIndex":1,"class":"TextButton","name":"loadButton","color":[200,200,200]}]

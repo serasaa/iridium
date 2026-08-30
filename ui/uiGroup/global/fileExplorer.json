@@ -1,0 +1,295 @@
+[
+    {
+        "name": "fileExplorer",
+        "outline": false,
+        "visible": true,
+        "backgroundBlurred": true,
+        "anchorX": "stretch",
+        "class": "Frame",
+        "zIndex": 90,
+        "children": [
+            {
+                "name": "fExplorerBack",
+                "outline": false,
+                "visible": true,
+                "anchorX": "center",
+                "class": "Frame",
+                "zIndex": 1,
+                "children": [
+                    {
+                        "name": "titleBar",
+                        "outline": false,
+                        "visible": true,
+                        "anchorX": "stretch",
+                        "class": "Frame",
+                        "zIndex": 1,
+                        "children": [
+                            {
+                                "children": [],
+                                "class": "TextLabel",
+                                "zIndex": 1,
+                                "fontSize": 20,
+                                "textColor": [
+                                    255,
+                                    255,
+                                    255
+                                ],
+                                "textAlpha": 1,
+                                "textAlignmentX": "left",
+                                "font": "SpaceMono-Bold",
+                                "name": "fExpTitle",
+                                "visible": true,
+                                "anchorX": "left",
+                                "anchorY": "top",
+                                "textAlignmentY": "center",
+                                "alpha": 0,
+                                "color": [
+                                    200,
+                                    200,
+                                    200
+                                ],
+                                "position": [
+                                    12,
+                                    12
+                                ],
+                                "text": "choose file",
+                                "size": [
+                                    200,
+                                    40
+                                ]
+                            }
+                        ],
+                        "anchorY": "top",
+                        "shadowRadius": 16,
+                        "size": [
+                            600,
+                            64
+                        ],
+                        "shadowAlpha": 0.4,
+                        "shadow": false,
+                        "position": [
+                            0,
+                            0
+                        ],
+                        "color": [
+                            30,
+                            30,
+                            30
+                        ],
+                        "alpha": 1
+                    },
+                    {
+                        "children": [],
+                        "class": "TextButton",
+                        "zIndex": 1,
+                        "fontSize": 16,
+                        "textColor": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "textAlpha": 1,
+                        "textAlignmentX": "center",
+                        "font": "SpaceMono-Regular",
+                        "name": "fExpCancel",
+                        "visible": true,
+                        "anchorX": "left",
+                        "anchorY": "top",
+                        "textAlignmentY": "center",
+                        "alpha": 1,
+                        "color": [
+                            30,
+                            30,
+                            30
+                        ],
+                        "position": [
+                            384,
+                            452
+                        ],
+                        "text": "cancel",
+                        "size": [
+                            100,
+                            40
+                        ]
+                    },
+                    {
+                        "impulseStrength": 30,
+                        "outline": false,
+                        "shadowAlpha": 0.4,
+                        "clipContent": true,
+                        "class": "ScrollingFrame",
+                        "zIndex": 1,
+                        "scrollbarColor": [
+                            100,
+                            100,
+                            100
+                        ],
+                        "scrollbarWidth": 6,
+                        "scrollbarAlpha": 0.7,
+                        "shadow": false,
+                        "children": [],
+                        "digitalFrictionValue": 0.6,
+                        "name": "fExpContent",
+                        "canvasHeight": 200,
+                        "visible": true,
+                        "overscrollStiffnessMultiplier": 0.8,
+                        "anchorX": "left",
+                        "color": [
+                            30,
+                            30,
+                            30
+                        ],
+                        "alpha": 1,
+                        "shadowRadius": 16,
+                        "anchorY": "top",
+                        "restitution": 0.3,
+                        "scrollbarVisible": true,
+                        "scrollingSensitivity": 1,
+                        "stiffness": 20,
+                        "position": [
+                            8,
+                            72
+                        ],
+                        "analogFrictionValue": 0.97,
+                        "size": [
+                            584,
+                            372
+                        ]
+                    },
+                    {
+                        "children": [],
+                        "class": "TextButton",
+                        "zIndex": 1,
+                        "fontSize": 16,
+                        "textColor": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "textAlpha": 1,
+                        "textAlignmentX": "center",
+                        "font": "SpaceMono-Regular",
+                        "name": "fExpOk",
+                        "visible": true,
+                        "anchorX": "left",
+                        "anchorY": "top",
+                        "textAlignmentY": "center",
+                        "alpha": 1,
+                        "color": [
+                            30,
+                            30,
+                            30
+                        ],
+                        "position": [
+                            492,
+                            452
+                        ],
+                        "text": "ok",
+                        "size": [
+                            100,
+                            40
+                        ]
+                    },
+                    {
+                        "name": "fExpCurDirBack",
+                        "outline": false,
+                        "visible": true,
+                        "anchorX": "left",
+                        "class": "Frame",
+                        "zIndex": 1,
+                        "children": [
+                            {
+                                "children": [],
+                                "class": "TextLabel",
+                                "zIndex": 1,
+                                "fontSize": 16,
+                                "textColor": [
+                                    255,
+                                    255,
+                                    255
+                                ],
+                                "textAlpha": 1,
+                                "textAlignmentX": "left",
+                                "font": "SpaceMono-Bold",
+                                "name": "fExpCurDir",
+                                "visible": true,
+                                "anchorX": "left",
+                                "anchorY": "top",
+                                "textAlignmentY": "center",
+                                "alpha": 0,
+                                "color": [
+                                    200,
+                                    200,
+                                    200
+                                ],
+                                "position": [
+                                    8,
+                                    8
+                                ],
+                                "text": "C:\\yo\\mama",
+                                "size": [
+                                    352,
+                                    24
+                                ]
+                            }
+                        ],
+                        "anchorY": "top",
+                        "shadowRadius": 16,
+                        "size": [
+                            368,
+                            40
+                        ],
+                        "shadowAlpha": 0.4,
+                        "shadow": false,
+                        "position": [
+                            8,
+                            452
+                        ],
+                        "color": [
+                            30,
+                            30,
+                            30
+                        ],
+                        "alpha": 1
+                    }
+                ],
+                "anchorY": "center",
+                "shadowRadius": 16,
+                "size": [
+                    600,
+                    500
+                ],
+                "shadowAlpha": 0.4,
+                "shadow": false,
+                "position": [
+                    340,
+                    110
+                ],
+                "color": [
+                    60,
+                    60,
+                    60
+                ],
+                "alpha": 1
+            }
+        ],
+        "anchorY": "stretch",
+        "shadowRadius": 16,
+        "size": [
+            1280,
+            720
+        ],
+        "shadowAlpha": 0.4,
+        "shadow": false,
+        "position": [
+            0,
+            0
+        ],
+        "color": [
+            0,
+            0,
+            0
+        ],
+        "alpha": 0.69
+    }
+]
