@@ -1,0 +1,296 @@
+[
+    {
+        "position": [
+            0,
+            0
+        ],
+        "class": "Frame",
+        "shadow": false,
+        "outline": false,
+        "shadowAlpha": 0.4,
+        "name": "menuBar",
+        "visible": true,
+        "anchorX": "stretch",
+        "anchorY": "top",
+        "zIndex": 1,
+        "shadowRadius": 16,
+        "children": [
+            {
+                "position": [
+                    12,
+                    12
+                ],
+                "class": "Frame",
+                "shadow": false,
+                "outline": false,
+                "shadowAlpha": 0.4,
+                "name": "list",
+                "visible": true,
+                "anchorX": "left",
+                "anchorY": "top",
+                "zIndex": 1,
+                "shadowRadius": 16,
+                "children": [
+                    {
+                        "position": [
+                            0,
+                            0
+                        ],
+                        "anchorX": "left",
+                        "visible": true,
+                        "anchorY": "top",
+                        "size": [
+                            1001,
+                            40
+                        ],
+                        "color": [
+                            66.000003665686,
+                            66.000003665686,
+                            66.000003665686
+                        ],
+                        "text": "physics",
+                        "alpha": 1,
+                        "font": "SpaceMono-Regular",
+                        "class": "TextButton",
+                        "children": [],
+                        "fontSize": 14,
+                        "textColor": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "textAlpha": 1,
+                        "textAlignmentX": "center",
+                        "textAlignmentY": "center",
+                        "zIndex": 1,
+                        "name": "physics"
+                    },
+                    {
+                        "position": [
+                            448,
+                            -640
+                        ],
+                        "anchorX": "left",
+                        "visible": false,
+                        "anchorY": "top",
+                        "size": [
+                            100,
+                            40
+                        ],
+                        "color": [
+                            66.000003665686,
+                            66.000003665686,
+                            66.000003665686
+                        ],
+                        "text": "build",
+                        "alpha": 1,
+                        "font": "SpaceMono-Regular",
+                        "class": "TextButton",
+                        "children": [],
+                        "fontSize": 14,
+                        "textColor": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "textAlpha": 1,
+                        "textAlignmentX": "center",
+                        "textAlignmentY": "center",
+                        "zIndex": 1,
+                        "name": "build"
+                    },
+                    {
+                        "position": [
+                            560,
+                            -640
+                        ],
+                        "anchorX": "left",
+                        "visible": false,
+                        "anchorY": "top",
+                        "size": [
+                            100,
+                            40
+                        ],
+                        "color": [
+                            66.000003665686,
+                            66.000003665686,
+                            66.000003665686
+                        ],
+                        "text": "debug",
+                        "alpha": 1,
+                        "font": "SpaceMono-Regular",
+                        "class": "TextButton",
+                        "children": [],
+                        "fontSize": 14,
+                        "textColor": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "textAlpha": 1,
+                        "textAlignmentX": "center",
+                        "textAlignmentY": "center",
+                        "zIndex": 1,
+                        "name": "debug"
+                    },
+                    {
+                        "position": [
+                            336,
+                            0
+                        ],
+                        "anchorX": "left",
+                        "visible": true,
+                        "anchorY": "top",
+                        "size": [
+                            100,
+                            40
+                        ],
+                        "color": [
+                            66.000003665686,
+                            66.000003665686,
+                            66.000003665686
+                        ],
+                        "text": "settings",
+                        "alpha": 1,
+                        "font": "SpaceMono-Regular",
+                        "class": "TextButton",
+                        "children": [],
+                        "fontSize": 14,
+                        "textColor": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "textAlpha": 1,
+                        "textAlignmentX": "center",
+                        "textAlignmentY": "center",
+                        "zIndex": 1,
+                        "name": "settings"
+                    },
+                    {
+                        "position": [
+                            112,
+                            0
+                        ],
+                        "anchorX": "left",
+                        "visible": true,
+                        "anchorY": "top",
+                        "size": [
+                            100,
+                            40
+                        ],
+                        "color": [
+                            66.000003665686,
+                            66.000003665686,
+                            66.000003665686
+                        ],
+                        "text": "spawn",
+                        "alpha": 1,
+                        "font": "SpaceMono-Regular",
+                        "class": "TextButton",
+                        "children": [],
+                        "fontSize": 14,
+                        "textColor": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "textAlpha": 1,
+                        "textAlignmentX": "center",
+                        "textAlignmentY": "center",
+                        "zIndex": 1,
+                        "name": "spawn"
+                    },
+                    {
+                        "position": [
+                            224,
+                            0
+                        ],
+                        "anchorX": "left",
+                        "visible": true,
+                        "anchorY": "top",
+                        "size": [
+                            100,
+                            40
+                        ],
+                        "color": [
+                            66.000003665686,
+                            66.000003665686,
+                            66.000003665686
+                        ],
+                        "text": "help",
+                        "alpha": 1,
+                        "font": "SpaceMono-Regular",
+                        "class": "TextButton",
+                        "children": [],
+                        "fontSize": 14,
+                        "textColor": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "textAlpha": 1,
+                        "textAlignmentX": "center",
+                        "textAlignmentY": "center",
+                        "zIndex": 1,
+                        "name": "help"
+                    }
+                ],
+                "size": [
+                    776,
+                    40
+                ],
+                "color": [
+                    255,
+                    255,
+                    255
+                ],
+                "alpha": 0
+            }
+        ],
+        "size": [
+            1280,
+            64
+        ],
+        "color": [
+            30.000000111759,
+            30.000000111759,
+            30.000000111759
+        ],
+        "alpha": 1
+    },
+    {
+        "position": [
+            12,
+            670
+        ],
+        "anchorX": "left",
+        "visible": true,
+        "anchorY": "bottom",
+        "size": [
+            200,
+            50
+        ],
+        "color": [
+            255,
+            255,
+            255
+        ],
+        "text": "Label",
+        "alpha": 0,
+        "font": "SpaceMono-Regular",
+        "class": "TextLabel",
+        "children": [],
+        "fontSize": 14,
+        "textColor": [
+            255,
+            255,
+            255
+        ],
+        "textAlpha": 1,
+        "textAlignmentX": "left",
+        "textAlignmentY": "bottom",
+        "zIndex": 1,
+        "name": "stats"
+    }
+]
