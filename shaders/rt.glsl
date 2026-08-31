@@ -33,7 +33,13 @@ uniform vec3 camPos;
 uniform vec3 camForward;
 uniform vec3 camRight;
 uniform vec3 camUp;
+
+//cam params
 uniform float fov;
+uniform float anamorphicScale;
+uniform float swirlStrength;
+uniform float apertureF;
+
 uniform vec2 res;
 uniform float frameCount;
 uniform Image InputImage;
@@ -724,19 +730,27 @@ vec3 rayTrace(vec2 uv, vec2 sCoord)
         float v = uv.y * 2.0 - 1.0;
 
         u *= rtRes.x / rtRes.y;
+        
+        vec2 centeredUV = vec2(u, v);
+        float distFromCenter = length(centeredUV);
 
         float scale = tan(fov * 0.5);
 
         u *= scale;
         v *= scale;
 
-        float aaAmount = 2.5*scale;
+        float horizontalScale = anamorphicScale;
+
+        float px = u * horizontalScale;
+        float py = v;
+
+        float aaAmount = 2.5 * scale;
 
         float aaX = rand(rng) - 0.5;
         float aaY = rand(rng) - 0.5;
 
-        float uJittered = u + aaX * aaAmount / rtRes.x;
-        float vJittered = v + aaY * aaAmount / rtRes.y;
+        float uJittered = px + aaX * aaAmount / rtRes.x;
+        float vJittered = py + aaY * aaAmount / rtRes.y;
 
         vec3 baseDir = normalize(
             camForward +
@@ -753,13 +767,28 @@ vec3 rayTrace(vec2 uv, vec2 sCoord)
         float radius = pow(r2, 0.4);
 
         vec2 disk = vec2(cos(angle), sin(angle)) * radius;
+        
+        vec2 radial = distFromCenter > 0.0001 ? centeredUV / distFromCenter : vec2(1.0, 0.0);
+        vec2 tangent = vec2(-radial.y, radial.x);
 
-        float apertureRadius = (1.0 / 6.3) * scale;
+        float radProj = dot(disk, radial);
+        float tanProj = dot(disk, tangent);
+
+        radProj *= (1.0 - clamp(distFromCenter * swirlStrength, 0.0, 0.95));
+
+        disk = radial * radProj + tangent * tanProj;
+        
+        float apertureRadius = (1.0 / apertureF) * scale;
+
+        vec2 aperture = vec2(
+            disk.x * apertureRadius * anamorphicScale,
+            disk.y * apertureRadius
+        );
 
         ray.origin =
             camPos +
-            camRight * disk.x * apertureRadius +
-            camUp * disk.y * apertureRadius;
+            camRight * aperture.x +
+            camUp * aperture.y;
 
         ray.dir = normalize(focalPoint - ray.origin);
         
@@ -780,11 +809,12 @@ void computemain()
         return;
     }
 
-    vec3 sampl = rayTrace(uv,pixel);
-    //reinhard (uncomment to activate)
-    //sampl = sampl / (sampl + 1.0);
+    vec2 anamorphicUV = uv;
 
-    //sampl = filmic(sampl);
+    anamorphicUV.x =
+        (anamorphicUV.x - 0.5) / anamorphicScale + 0.5;
+
+    vec3 sampl = rayTrace(anamorphicUV, pixel);
     
     if (frameCount <= 1.0)
     {

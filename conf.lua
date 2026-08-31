@@ -1,7 +1,7 @@
-DEBUG=true
+DEBUG=false
 function love.conf(t)
     t.console=DEBUG
-    t.title = "flowRT"
+    t.title = "iridium"
     t.window.width = 901
     t.window.height = 396
     t.window.resizable = true

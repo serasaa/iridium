@@ -24,7 +24,13 @@ local rendering=false
 local rtBounces=10
 local rtSamples=1
 
-local rtRes={1920,1080}
+local rtRes={2560,1080}
+
+local camLensSettings={
+    anamorphicScale=.4,
+    swirlStrength=.1,
+    aperture=6.0, --its the second number of like f1/2
+}
 
 local globalDt=0
 
@@ -42,6 +48,7 @@ typedef uint16_t uint16;
 typedef uint32_t uint32;
 typedef float float32;
 ]]
+
 
 function string.unpack(fmt, str, offset)
     offset = offset or 1
@@ -505,7 +512,7 @@ function inputDealer(key,gamepad)
                     loadEXR(path[1])
                 end,{
                         title="Select EXR",
-                        filters={["OpenEXR HDR image"]="exr"}
+                        filters={["OpenEXR HDR image"]="exr",["Radiance HDR Image"]='hdr'}
                     }
                 )
             end
@@ -554,6 +561,10 @@ function setupRaytracer()
     shaders.rt:send("focusDistance",50000)
     shaders.rt:send("hdri",love.graphics.newImage(love.image.newImageData(128,128,"rgba32f")))
     shaders.rt:send("depthBuffer",depthBuffer)
+    
+    shaders.rt:send("anamorphicScale",camLensSettings.anamorphicScale)
+    shaders.rt:send("apertureF",camLensSettings.aperture)
+    shaders.rt:send("swirlStrength",camLensSettings.swirlStrength)
 
     accumCanvasA:setFilter("nearest","nearest")
     accumCanvasB:setFilter("nearest","nearest")

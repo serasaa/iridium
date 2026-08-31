@@ -377,7 +377,7 @@ function gltfLoader.loadGltf(path)
     local totalIndices=0
     local triangleData = {}
     for ii,v in pairs(model.nodes) do
-        if v.name:lower()=="camera" then
+        if string.find(v.name:lower(),"camera") then
             cam.pos = mirrorX(v.translation)
 
             cam.forward = mirrorX(quatRotate({0,0,-1}, v.rotation))
