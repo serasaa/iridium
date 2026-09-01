@@ -24,7 +24,7 @@ local rendering=false
 local rtBounces=10
 local rtSamples=1
 
-local rtRes={2560,1080}
+local rtRes={1280,720}
 
 local camLensSettings={
     anamorphicScale=.4,
