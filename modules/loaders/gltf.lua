@@ -464,7 +464,7 @@ function gltfLoader.loadGltf(path)
         ::continue::
     end
 
-    lightsBuffer = love.graphics.newBuffer(
+    --[[lightsBuffer = love.graphics.newBuffer(
         "float",
         #lights+1,
         {
@@ -472,10 +472,12 @@ function gltfLoader.loadGltf(path)
         }
     )
 
+    lightsBuffer:setArrayData(lights)
+
     if #lights>0 then
-        shaders.rt:send("lights",unpack(lightsBuffer))
+        shaders.rt:send("lightsBuffer",lightsBuffer)
         shaders.rt:send("numLights",#lights)
-    end
+    end]]
 
     local tree=buildBVH(triangles)
 
@@ -486,7 +488,7 @@ function gltfLoader.loadGltf(path)
             shaderstorage = true
         }
     )
-
+    
     triangleBuffer:setArrayData(triangleData)
 
     local nodes = {}

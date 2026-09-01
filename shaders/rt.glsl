@@ -25,6 +25,13 @@ layout(std430) readonly buffer TriangleIndices
     int triangleIndices[];
 };
 
+layout(std430) readonly buffer lightsBuffer
+{
+    int lights[];
+};
+
+uniform int numLights;
+
 uniform sampler2D images[96];
 
 extern float iTime;
@@ -177,12 +184,6 @@ struct Triangle {
     int materialID;
 };
 
-struct Light {
-    int triID;
-};
-
-uniform int lights[];
-uniform int numLights;
 
 struct BVHNode
 {
