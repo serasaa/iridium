@@ -206,12 +206,8 @@ local function getSplitAxis(box)
     end
 end
 
-local function splitBVHNode(parent,depth)
-    
-end
-
+local curBVH=0
 function buildBVH(triangles)
-
     local node = BVHNode.new()
     node.boundingBox = BVHBoundingBox.new()
 
@@ -367,7 +363,6 @@ function gltfLoader.loadGltf(path)
     local model = gltf.new(path)
 
     local materials=model.materials or {}
-    local lookup=materials
 
     sendMaterials(materials)
     sendTextures(basePath, model.textures)
@@ -469,9 +464,17 @@ function gltfLoader.loadGltf(path)
         ::continue::
     end
 
+    lightsBuffer = love.graphics.newBuffer(
+        "float",
+        #lights+1,
+        {
+            shaderstorage = true
+        }
+    )
+
     if #lights>0 then
-        --shaders.rt:send("lights",unpack(lights))
-        --shaders.rt:send("numLights",#lights)
+        shaders.rt:send("lights",unpack(lightsBuffer))
+        shaders.rt:send("numLights",#lights)
     end
 
     local tree=buildBVH(triangles)
