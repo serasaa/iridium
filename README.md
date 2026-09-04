@@ -45,9 +45,9 @@ also heres some renders made with it
 
 
 # References
-GLSL PathTracer (https://github.com/knightcrawler25/GLSL-PathTracer/) for validation and some of the scenes
-Pixar RenderMan for bokeh and anamorphic validation
-Sebastian Lague (https://github.com/SebLague/) for inspiration, huge source of knowledge from all his Coding Adventures
-Ray Tracing in One Weekend (https://github.com/petershirley/raytracinginoneweekend) for dielectrics and inspiration
-Love2D for making this possible at all
-Zellicious (https://github.com/Zellicious) for making me have the idea :>
+* GLSL PathTracer (https://github.com/knightcrawler25/GLSL-PathTracer/) for validation and some of the scenes
+* Pixar RenderMan for bokeh and anamorphic validation
+* Sebastian Lague (https://github.com/SebLague/) for inspiration, huge source of knowledge from all his Coding Adventures
+* Ray Tracing in One Weekend (https://github.com/petershirley/raytracinginoneweekend) for dielectrics and inspiration
+* Love2D for making this possible at all
+* Zellicious (https://github.com/Zellicious) for making me have the idea :>
